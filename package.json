@@ -1,0 +1,22 @@
+{
+  "name": "MonServiceSécurisé-UI-kit",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build:dev": "sass --watch --update --style=expanded src:build",
+    "build:prod": "sass --no-source-map --style=compressed src:build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betagouv/mon-service-securise-ui-kit.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/betagouv/mon-service-securise-ui-kit/issues"
+  },
+  "homepage": "https://github.com/betagouv/mon-service-securise-ui-kit#readme",
+  "devDependencies": {
+    "sass": "^1.62.1"
+  }
+}
