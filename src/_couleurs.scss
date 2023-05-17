@@ -1,0 +1,63 @@
+$principales: (
+  bleu-clair-MSS: #0079D0,
+  bleu-survol-MSS: #0C5C98,
+  bleu-fonce-MSS: #08416A,
+  noir-typo: #2F3A43,
+  rose-MSS: #FF6584,
+  bleu-fond: #EFF6FF,
+  fond-filtres: #DBECF1
+);
+
+$niveau-de-gris: (
+  blanc: #FFFFFF,
+  gris-fond: #F1F5F9,
+  gris-contour: #CBD5E1,
+  gris-typo: #667892
+);
+
+$indice-cyber: (
+  violet-clair: #9926BE,
+  violet-fonce: #7025DA,
+  bleu-fonce: #3352B0,
+  bleu-clair: #46A0E6,
+  metal: #96A6AE,
+  or: #EAC14B
+);
+
+$degrade: (
+  ic1: linear-gradient(180deg, #A226B8 0%, #8926C9 100%),
+  ic2: linear-gradient(180deg, #513AC8 0%, #8C26C7 100%),
+  ic3: linear-gradient(180deg, #326FC0 0%, #4D3DC5 100%),
+  ic4: linear-gradient(180deg, #54B8F6 0%, #3479C9 100%),
+  ic5: linear-gradient(180deg, #D2DFE6 0%, #9CACB5 100%),
+  ic6: linear-gradient(180deg, #F2CA5A 0%, #DBAF2C 100%)
+);
+
+$information: (
+  succes: #0E972B,
+  succes-light: #D4F4DB,
+  vigilance: #FAA72C,
+  vigilance-light: #FFF2DE,
+  erreur: #CA3535,
+  erreur-light: #FFDFDF,
+  information: #0079D0,
+  information-light: #DBEEFF,
+  autre: #7025DA,
+  autre-light: #E9DDFF
+);
+
+$toutes-couleurs: (
+  'principale': $principales,
+  'niveau-de-gris': $niveau-de-gris,
+  'indice-cyber': $indice-cyber,
+  'degrade': $degrade,
+  'information': $information
+);
+
+:root {
+  @each $categorie, $map in $toutes-couleurs {
+    @each $nom, $valeur in map-get($map: $toutes-couleurs, $key: $categorie) {
+      --#{$categorie}-#{$nom}: #{$valeur};
+    }
+  }
+}
