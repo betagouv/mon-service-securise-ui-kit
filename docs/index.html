@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .group {
+      display: flex;
+      gap: 2em;
+      margin-bottom: 2em;
+    }
+
+    p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>MonServiceSécurisé - UI Kit</h1>
+    <h2>Boutons</h2>
+    <div class="group">
+      <button>Label bouton</button>
+      <button>
+        <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png">
+        Label bouton with icon 
+      </button>
+      <button>
+        Label bouton with icon 
+        <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png">
+      </button>
+    </div>
+    <div class="group">
+      <button class="secondaire">Label bouton</button>
+      <button class="secondaire">
+        <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png">
+        Label bouton with icon 
+      </button>
+      <button class="secondaire">
+        Label bouton with icon 
+        <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png">
+      </button>
+    </div>
+    <div class="group">
+      <button class="tertiaire">Label bouton</button>
+      <button class="tertiaire">
+        <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png">
+        Label bouton with icon 
+      </button>
+      <button class="tertiaire">
+        Label bouton with icon 
+        <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png">
+      </button>
+      <button class="tertiaire">
+        <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png">
+        Label bouton with 2 icons 
+        <img src="https://cdn-icons-png.flaticon.com/512/120/120890.png">
+      </button>
+    </div>
+    <h2>Lien interne (avec chevron)</h2>
+    <div class="group">
+      <a href="http://google.com">Lien simple</a>
+      <p>Dans une <a class="phrase" href="http://googles.com">phrase</a> avec du texte</p>
+    </div>
+    <div class="group">
+      <a class="externe" href="http://google.com">Lien externe simple</a>
+    </div>
+    <h2>Bouton radio</h2>
+    <div class="group">
+      <div>
+        <input type="radio" id="un" name="radio" value="un"
+               checked>
+        <label for="un">Label bouton radio</label>
+      </div>  
+      <div>
+        <input type="radio" id="deux" name="radio" value="deux">
+        <label for="deux">Label bouton radio</label>
+      </div>
+    </div>
+    <h2>Case à cocher</h2>
+    <div class="group">
+      <div>
+        <input type="checkbox" id="case-a-cocher" name="case-a-cocher">
+        <label for="case-a-cocher">Label case à cocher</label>
+      </div>    
+    </div>
+  </main>
+</body>
+</html>
