@@ -1,0 +1,62 @@
+@use 'couleurs';
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  aspect-ratio: 1;
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  border: 1.5px solid map-get($map: couleurs.$principales, $key: 'noir-typo');
+  border-radius: 4px;
+  cursor: pointer;
+  transform: translateY(4px);
+  position: relative;
+
+  &:checked {
+    background: map-get($map: couleurs.$principales, $key: 'bleu-clair-MSS');
+    border-color: map-get($map: couleurs.$principales, $key: 'bleu-clair-MSS');
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      border: 2px solid map-get($map: couleurs.$niveau-de-gris, $key: 'blanc');
+      width: 0.5em;
+      height: 0.3em;
+      border-style: none none solid solid;
+      transform: rotate(-45deg);
+      left: 0.3em;
+      top: 0.3em;
+    }
+  }
+
+  &:hover {
+    border-color: map-get($map: couleurs.$principales, $key: 'bleu-clair-MSS');
+  }
+
+  &:invalid {
+    border-color: map-get($map: couleurs.$information, $key: 'erreur');
+  }
+
+  + label {
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  &:focus {
+    border-color: map-get($map: couleurs.$principales, $key: 'bleu-survol-MSS');
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: -0.25em;
+      left: -0.25em;
+      top: -0.25em;
+      bottom: -0.25em;
+      border: 1.5px solid map-get($map: couleurs.$principales, $key: 'bleu-clair-MSS');;
+    }
+  }
+}
