@@ -1,0 +1,69 @@
+@use 'couleurs';
+
+$chevron: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzkxNjdfMjAxMDYpIj4KPHBhdGggZD0iTTE0LjE3MTkgMTEuOTk5OEw5LjIyMTkyIDcuMDQ5NzdMMTAuNjM1OSA1LjYzNTc3TDE2Ljk5OTkgMTEuOTk5OEwxMC42MzU5IDE4LjM2MzhMOS4yMjE5MiAxNi45NDk4TDE0LjE3MTkgMTEuOTk5OFoiIGZpbGw9IiMwMDc5RDAiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF85MTY3XzIwMTA2Ij4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJtYXRyaXgoMCAtMSAxIDAgMCAyNCkiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K');
+$lien-externe: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjYiIHZpZXdCb3g9IjAgMCAyNCAyNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDEzTDE3IDgiIHN0cm9rZT0iIzAwNzlEMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMTggMTBWN0gxNSIgc3Ryb2tlPSIjMDA3OUQwIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMC44NSA3SDkuNTVDNi4zIDcgNSA4LjMgNSAxMS41NVYxNS40NUM1IDE4LjcgNi4zIDIwIDkuNTUgMjBIMTMuNDVDMTYuNyAyMCAxOCAxOC43IDE4IDE1LjQ1VjE0LjE1IiBzdHJva2U9IiMwMDc5RDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==');
+
+a {
+  color: map-get($map: couleurs.$principales, $key: 'bleu-clair-MSS');
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.125em 0.25em;
+  border-radius: 0.25em;
+  border: 1px solid transparent;
+
+  &::after {
+    content: $chevron;
+    aspect-ratio: 1;
+    width: 1.5em;
+    height: 1.5em;
+    transform: translateY(2px);
+  }
+
+  &:hover {
+    color: map-get($map: couleurs.$principales, $key: 'bleu-survol-MSS');
+    background: map-get($map: couleurs.$niveau-de-gris, $key: 'gris-fond');
+
+    &::after {
+      filter: brightness(0) invert(17%) sepia(96%) saturate(2578%) hue-rotate(191deg) brightness(97%) contrast(91%);
+    }
+  }
+
+  &:focus {
+    border-color: map-get($map: couleurs.$principales, $key: 'bleu-clair-MSS');
+  }
+
+  &:active, &:visited {
+    color: map-get($map: couleurs.$principales, $key: 'bleu-fonce-MSS');
+
+    &::after {
+      filter: brightness(0) invert(21%) sepia(26%) saturate(2410%) hue-rotate(172deg) brightness(96%) contrast(100%);
+    }
+  }
+
+  &.phrase {
+    display: inline;
+    padding: 0;
+    text-decoration: underline;
+
+    &::after {
+      content: '';
+    }
+
+    &:hover {
+      background: none;
+    }
+
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &.externe {
+    &::after {
+      content: $lien-externe;
+    }
+  }
+}
