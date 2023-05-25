@@ -1,0 +1,25 @@
+name: SASS CI
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source Git branch
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Make destination directory for compiled CSS
+        run: mkdir -vp /tmp/mon-service-securise-ui-kit/build
+
+      - name: Compile CSS from SCSS files
+        uses: gha-utilities/sass-build@v0.5.1
+        with:
+          source: src/style.scss
+          destination: /tmp/mon-service-securise-ui-kit/build/style.css
